@@ -31,7 +31,12 @@
 # How does a for loop iterate through a string?
 
 def one(string):
-    return ""
+    word = ''
+    for i in string:
+        word = word + (i*3)
+    return word
+
+#print(one("The"))
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -51,8 +56,17 @@ def one(string):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 
-def two(number):
-    return False
+def two(number):                        # number = 3
+    if number <=3:
+        return True
+    for n in range(2, number-1):       # for all numbers from 2 to 3
+        if number % n == 0:             # if 8 is divisable by 2,3,4,5,6,7
+            return False
+        else:
+            return True 
+
+    
+    
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -71,8 +85,13 @@ def two(number):
     # What happens if you multiply a string by a number?
 
 
-def three(a):
-    return 1
+def three(a):              #return a+aa+aaa+aaaa
+    a = str(a)               # e.g 9 + 99 + x + y
+    aa = str(a*2)
+    aaa = str(a*3)
+    aaaa = str(a*4) 
+    return int(a) + int(aa) + int(aaa) + int(aaaa)
+print(three(9))
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -122,9 +141,26 @@ def four(string1, string2):
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
 
+import random
 
 def five():
-    return []
+    numbers = []
+    while int(len(numbers)) < 6:
+        x = random.randint(100, 200)
+        if x % 2 == 0:
+            return x
+        return numbers.append(x)
+    return numbers
+
+
+
+        #for n in range(1,6):
+        #    x = random.randint(100, 200)
+        #    if x % 2 == 0:
+        #        return numbers.append(x)
+                
+        #return numbers
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -146,7 +182,15 @@ def five():
 
 
 def six(string):
-    return False
+    string = string.lower
+    str_end = string[-2:]
+    for letter in range(str_end):
+        if string[letter] == "p" and string[letter+1] =="y":
+            return True
+        else:
+            return False
+
+#print(six('ilovepy'))
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
